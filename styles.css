@@ -242,7 +242,7 @@ nav ul li a {
     width: 100%;
     max-width: 15rem;
     height: auto;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     margin-bottom: 1rem;
 }
 
@@ -272,8 +272,7 @@ nav ul li a {
 
 /* Footer Styles */
 .footer {
-    position: relative; 
-    width: 100%; 
+    position: relative;  
     background-color: #fff; 
     color: #271555; 
     padding: 1rem; 
@@ -388,7 +387,7 @@ nav ul li a {
     width: 100%;
     max-width: 25rem;
     margin: 0 auto;
-    border-radius: 0.625rem;
+    border-radius: 0.3rem;
 }
 
 .card-text {
