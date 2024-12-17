@@ -1,0 +1,931 @@
+/* Importing the font */
+@font-face {
+    font-family: "unison-pro-bold.otf";
+    src: url(../Fonts/unison-pro-bold.otf);
+}
+
+@font-face {
+    font-family: "founders-grotesk.otf";
+    src: url(../Fonts/FoundersGrotesk-Regular.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Default font size (adjustable for scalability) */
+}
+
+/* Global styles */
+body {
+    font-family: "unison-pro-bold.otf";
+    color: #684D9A; 
+    background: #D9CEE7; 
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Header Styles */
+.header {
+    background-color: #D9CEE7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "unison-pro-bold.otf";
+}
+
+.nav-menu {
+    display: none; /* Hidden on smaller screens */
+    list-style: none;
+}
+
+.nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul a {
+    text-decoration: none; 
+    color: #271555; 
+    font-weight: bold; 
+}
+
+.nav ul li {
+    margin-left: 1.25rem;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color:#271555;
+    font-size: 0.9rem;
+    line-height: 1; 
+}
+
+.nav-menu a.active {
+    color:  #000;    
+    border-bottom: 0.15rem solid #FF7433;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: block; /* Visible only on mobile */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bar {
+    width: 1.8rem;
+    height: 0.25rem;
+    background-color: #271555;
+}
+
+/* Back button */
+.back-button {
+    background-color: #FF7433;
+    border: none;
+    color: white;
+    position: fixed;      
+    top: 5rem;           
+    left: 0.625rem;     
+    padding: 0.3rem;
+    padding-top: 0;
+    border-radius: 0.3rem;   
+    font-size: 1.5rem;   
+    cursor: pointer;     
+    z-index: 1000; 
+    border-radius: 0.625rem;
+}
+
+.back-button:hover {
+    background-color: #FF7433;
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    height: 50vh; 
+}
+
+.hero-images {
+    display: flex;
+    width: 100%; 
+    height: 70%; 
+    border: 0.3rem solid #684D9A;
+}
+
+.hero-images img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.hero-headline {
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D9CEE7;
+    padding: 0.5rem;
+    text-align: center;
+    width: 90%;
+}
+
+.hero-headline h1 {
+    font-size: 2.4rem;
+    color: #684D9A; 
+    margin-bottom: 1rem;
+    letter-spacing: 0.075rem;
+}
+
+.tag {
+    background: #FF7433;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.625rem;
+    letter-spacing: 0.075rem;
+    width: auto;
+    display: inline;
+    margin-top: 3rem;
+}
+
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem; 
+}
+
+.intro {
+    padding: 1rem;
+    text-align: center;
+}
+
+.intro h2 {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.5rem;
+    text-align: center;
+    color: #271555;
+}
+
+.intro p {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.3rem;
+    text-align: center;
+    color: #271555;
+    margin: 2rem;
+    line-height: 1.6;
+}
+
+
+.image-box {
+    border: 0.125rem solid #684D9A;
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #271555;
+    font-family: "unison-pro-bold.otf";
+}
+
+.text-box {
+    text-align: left;
+}
+
+.text-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Image slide */
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 40rem; 
+    overflow: hidden;
+    margin: 20px auto; 
+    border: 0.3rem solid #684D9A;
+    border-radius: 0.3rem; 
+    height: 20rem; /* Adjust height dynamically for images */
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.slide {
+    min-width: 100%; /* Each slide takes up full width of the slider */
+    height: 25rem; /* Default height for the slider */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.slide img {
+    position: absolute; /* Ensure the image can stretch to fill the parent */
+    top: 0; 
+    bottom: 0;
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-position: center;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color:  rgba(0, 0, 0, 0.8);
+
+}
+
+.offer {
+    padding: 2rem;
+    text-align: left;
+}
+
+.offer h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #271555;
+    margin-bottom: 2rem;
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+}
+
+.text-box {
+    background-color:#eae2f4;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    border: 0.25rem solid #684D9A;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.text-box h3 {
+    font-size: 1.3rem;
+    color: #271555;
+    margin-bottom: 1rem;
+    border-bottom: 0.25rem solid #684D9A;
+    padding-bottom: 0.5rem;
+}
+
+.offer .text-box p {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.3rem;
+    color: #271555;
+    margin-bottom: 1rem;
+}
+
+
+/* Event calender section */
+.event-calendar {
+    font-family: "founders-grotesk.otf";
+    background-color: #f4f2fd;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #684D9A;
+    margin: 2rem auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 50rem;
+}
+
+.event-calendar h2 {
+    font-family: "unison-pro-bold.otf";
+    font-size: 1.3rem;
+    color: #271555;
+    margin: 2rem;
+    text-align: center;
+}
+
+.event-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 100%;
+
+    background-color: #f4f2fd;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    max-width: 50rem;
+    margin: 1rem auto;
+}
+
+/* Individual Event */
+.event {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 0.15rem solid #ddd;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.event:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Event Date Styles */
+.event-date {
+    font-family: "unison-pro-bold.otf";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #684D9A;
+    color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    min-width: 4.5px;
+    margin: 0.5rem;
+}
+
+.event-date .date {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.event-date .month {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.event-details {
+    margin-left: 1rem;
+    flex: 1;
+}
+
+.event-details h3 {
+    font-family: "unison-pro-bold.otf";
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+    color: #271555;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.event-details p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Paging */
+.paging {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 1rem;
+}
+
+.paging .dot {
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+    border: 0.125rem solid #684D9A;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.paging .dot.active,
+.paging .dot:hover {
+    background-color: #684D9A;
+}
+
+/* Next Button */
+.event-next-btn {
+    font-family: "unison-pro-bold.otf";
+    font-size: 0.9rem;
+    letter-spacing: 0.075rem;
+    background-color: #FF7433;
+    color: #fff;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1); 
+    align-self: flex-end; 
+    margin-top: 2rem;
+    border: none;
+}
+
+.event-next-btn:hover {
+    background-color: #684D9A;
+}
+
+
+/* Review section */
+
+.review-text p {
+    font-family: "founders-grotesk.otf";
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    text-align:  center;
+    font-size: 1.3rem;
+    color: #271555;
+}
+
+.reviews {
+    background-color: #f8f9fc;
+    padding: 2rem;
+    border-radius: 0.3rem;
+    max-width: 40rem;
+    margin: 2rem auto;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    border: 0.25rem solid #684D9A;
+  }
+
+  .reviews p {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+
+  }
+  
+  .review-title {
+    font-family: "unison-pro-bold.otf";
+    font-size: 1.5rem;
+    color: #271555;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-right: 2rem;
+  }
+  
+  .review-list {
+    margin-bottom: 2rem;
+  }
+  
+  .review-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0.05rem solid #ddd;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-item h4 {
+    margin: 0 0 0.5rem;
+    color: #271555;
+    font-size: 1rem;
+  }
+  
+  .review-item p {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .review-item .rating {
+    color: #ffd700; /* Gold for stars */
+    font-size: 1.2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  form label {
+    font-weight: bold;
+    color: #271555;
+  }
+  
+  form input,
+  form textarea,
+  form select,
+  form button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #ddd;
+    width: 100%;
+  }
+  
+  form button {
+    font-family: "unison-pro-bold.otf";
+    font-size: 0.9rem;
+    letter-spacing: 0.075rem;
+    background-color: #FF7433;
+    color: #fff;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0.625rem;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2); 
+  }
+  
+  form button:hover {
+    background-color: #684D9A;
+  }
+  
+
+/* Want to know more */
+.wrapper {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: inline-block;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.sidebar {
+    font-family: "founders-grotesk.otf";
+    background-color:#eae2f4;
+    padding: 1.25rem; 
+    width: 20rem;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+    border: 0.3rem solid #684D9A;
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+    margin-top: 1.25rem; 
+    text-align: left;
+}
+
+.sidebar h2 {
+    font-family: "unison-pro-bold.otf";
+    font-size: 1.25rem; 
+    margin-bottom: 1.5rem;
+    color: #271555;
+    text-align: center;
+}
+
+.info-box {
+    font-size: 1.2rem; 
+}
+
+.info-box p {
+    margin-bottom: 1rem; 
+    line-height: 1.6; 
+}
+
+.info-box strong {
+    font-weight: bold; 
+}
+
+.info-box a {
+    color: #271555; 
+    text-decoration: none; 
+}
+
+.info-box a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Footer Styles */
+.footer {
+    position: relative; 
+    width: 100%; 
+    background-color: #fff; 
+    color: #271555; 
+    padding: 2rem; 
+    text-align: end;
+    font-family: "founders-grotesk.otf";
+    font-size: 1.1rem;
+}
+
+.footer-logo {
+    position: absolute; 
+    bottom: 0.5rem; 
+    left: 0.5rem; 
+    width: 6.25rem; 
+}
+
+.footer-logo img {
+    width: 100%; 
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for mobile */
+@media (max-width: 48rem) {
+    .header {
+        padding: 1.25rem 1.875rem;
+    }
+
+    .nav-menu {
+        display: none; /* Puts links in hamburger */
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        padding: 1rem 0; 
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        z-index: 10;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+ /* Show navigation links when active */
+.nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    }
+
+/* Show hamburger icon on mobile */
+    .hamburger {
+    display: flex;
+    }
+
+/* Hero */
+.hero-images img:nth-child(2) {
+    display: none; /* Hide the second image on mobile */
+}
+
+.hero-images img:nth-child(1) {
+    width: 100%; /* Ensure the first image takes up full width on mobile */
+}
+
+.hero-headline {
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D9CEE7;
+    padding: 0.5rem;
+    text-align: center;
+    width: 90%;
+}
+
+.hero-headline h1 {
+    font-size: 2.4rem;
+    color: #684D9A; 
+    margin-bottom: 1rem;
+    letter-spacing: 0.075rem;
+}
+
+.tag {
+    background: #FF7433;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.625rem;
+    letter-spacing: 0.075rem;
+    width: auto;
+    display: inline;
+    margin-top: 3rem;
+}
+
+/* Main */
+    .main-content {
+        display: block;
+    }
+
+    .content {
+        margin-bottom: 1.25rem;
+    }
+
+    .sidebar {
+        margin-top: 1.25rem;
+    }
+
+    .image-slider {
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .slide {
+        height: 30rem; /* Reduce height for mobile */
+    }
+
+    .prev-btn, .next-btn {
+        font-size: 20px; /* Smaller buttons for mobile */
+        padding: 8px;
+    }
+
+    .intro h2 {
+        font-size: 1.3rem;
+        text-align: left;
+        color: #271555;
+        margin: 1rem;
+    }
+    
+    .intro p {
+        font-family: "founders-grotesk.otf";
+        font-size: 1.3rem;
+        text-align: left;
+        color: #271555;
+        margin: 1rem;
+        line-height: 1.6;
+    }
+
+    .offer {
+        padding: 1.5rem;
+    }
+
+    .text-box {
+        padding: 1rem;
+    }
+
+    .text-box h3 {
+        font-size: 1rem;
+    }
+
+    .offer .text-box p {
+        font-size: 1.3rem;
+    }
+
+    .event {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem; /* Keep the padding */
+        border: 0.15rem solid #ddd;
+        border-radius: 0.5rem;
+        background-color: white;
+        box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+        width: 100%; /* Full width for mobile/tablet */
+        flex: 1;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .event-calendar {
+        padding: 0.5rem;
+        width: 90%;
+       
+    }
+
+    .reviews {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .sidebar {
+        width: 95%;
+        padding: 1rem;
+        margin: 1.5rem;
+    }
+
+    .info-box {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+/* Media query for desktop */
+@media (min-width: 48rem) {
+    .header {
+        padding: 1.875rem 3.125rem; 
+    }
+
+    .hamburger-menu {
+        display: none; /* Hide hamburger menu on desktop */
+    }
+
+    .nav-menu {
+        display: flex; 
+        gap: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .offerings-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .text-box {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .image-box:first-of-type {
+        grid-column: 1;
+    }
+
+    .image-box:last-of-type {
+        grid-column: 3;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 2.5rem; 
+    }
+
+    .offer {
+        flex: 2;
+    }
+
+    .offer-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 2.5rem; 
+    }
+
+    .event-calendar {
+        max-width: 50rem; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+    .event-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .sidebar {
+        padding: 1.25rem;
+        margin-top: 0;
+        width: 60%;
+        max-width: 35rem;
+        margin: 1.25rem auto;
+        text-align: left;
+    }
+}

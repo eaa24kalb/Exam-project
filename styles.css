@@ -1,0 +1,528 @@
+/* Importing the font */
+@font-face {
+    font-family: "unison-pro-bold.otf";
+    src: url(./Fonts/unison-pro-bold.otf);
+}
+
+@font-face {
+    font-family: "founders-grotesk.otf";
+    src: url(./Fonts/FoundersGrotesk-Regular.otf);
+}
+
+html {
+    font-size: 16px; /* 1rem = 16px */
+}
+
+/* Global styles */
+  body {
+    font-family: "unison-pro-bold.otf";
+    color: #684D9A; 
+    background: #D9CEE7; 
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+  }
+  
+/* Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #D9CEE7;
+}
+
+header .logo h1 {
+    font-size:1.5rem;
+    margin: 0;
+    color: #684D9A;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 1.25rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:#271555;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.nav-menu a.active {
+    color:  #000;    
+    border-bottom: 0.15rem solid #FF7433;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bar {
+    width: 1.8rem;
+    height: 0.25rem;
+    background-color: #271555;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    justify-content: center;
+    background-color: #D9CEE7;
+}
+
+#typewriter {
+    font-size: 3rem;
+    margin: 0;
+    color: #684D9A;
+    z-index: 2;
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    border-right: 0.15em solid #FF7433; /* Simulates the cursor */
+    animation: blink 0.75s step-end infinite; /* Cursor blinking effect */
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Cursor disappears */
+    }
+}
+
+/* Repeated text behind */
+
+.repeated-text h2 {
+    font-family: "unison-pro-bold.otf";
+    font-size: 3rem;
+    margin: 0;
+    color: #684D9A;
+}
+    
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Above repeated text */
+    color: #271555;
+}
+
+
+.hero-content .text h2 {
+    font-size: 1.5rem;
+    width: 100%;
+    align-items: flex-end;
+
+}
+
+.hero-image {
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    z-index: 1;
+    max-width: 30rem;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.3rem;
+    margin-bottom: 3rem;
+}
+
+/* Intro */
+.intro h3 {
+    font-family: "founders-grotesk.otf";
+    font-style: bold;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #271555;
+    margin: 1rem;
+}
+
+.intro p {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.3rem;
+    text-align: center;
+    color: #271555;
+    margin: 1rem;
+}
+
+/* Main section */
+.mission {
+    padding: 1rem;
+    text-align: center;
+    color: #271555;
+}
+
+.mission p {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #271555;
+}
+
+.vision {
+    padding: 1rem;
+    text-align: center;
+    color: #271555;
+}
+
+.vision p {
+    font-family: "founders-grotesk.otf";
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #271555;
+}
+
+.discoveries {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.discoveries-title h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #271555;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Grid container */
+.discoveries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.discovery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 1rem; /* Space between cards */
+    border-radius: 0.5rem;
+    border: 0.125rem solid #684D9A;
+    background-color: #D9CEE7;
+    transition: transform 0.3s ease; /* Smooth animation on hover */
+    box-sizing: border-box;
+}
+
+.card-image img {
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-title h3 {
+    font-family: "unison-pro-bold.otf";
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #271555;
+    margin-bottom: 0.5rem;
+}
+
+.card-text p {
+    text-align: center;
+    font-family: "founders-grotesk.otf";
+    font-size: 1.15rem;
+    color: #271555;
+    padding-bottom: 0.5rem;
+}
+
+.card-link {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FF7433;
+    margin: 0;
+}
+
+/* Footer Styles */
+.footer {
+    position: relative; 
+    width: 100%; 
+    background-color: #fff; 
+    color: #271555; 
+    padding: 1rem; 
+    text-align: end;
+    font-family: "founders-grotesk.otf";
+    font-size: 1.1rem;
+}
+
+.footer-logo {
+    position: absolute; 
+    bottom: 0.5rem; 
+    left: 0.5rem; 
+    width: 6.25rem; 
+}
+
+.footer-logo img {
+    width: 100%; 
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Media query for mobile */
+@media (max-width: 48rem) {
+    .nav-menu {
+        display: none; /* Puts links in hamburger */
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        padding: 1rem 0; 
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        z-index: 10;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+ /* Show navigation links when active */
+.nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    }
+
+/* Show hamburger icon on mobile */
+.hamburger {
+    display: flex;
+    }
+
+/* Hero section */
+.hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    height: auto;
+}
+
+/* Repeated text adjustment for mobile */
+.repeated-text h2 {
+    font-size: 3rem;
+    opacity: 0.1;
+    top: 40%; /* Adjust the postition */
+}
+
+.hero-content .text h1 {
+    font-size: 2.5rem;
+}
+
+.hero-content .text h2 {
+    font-size: 1.25rem;
+}
+
+/* Image adjustment */
+.hero-image {
+    position: relative;
+    margin-top: 2rem; /* Pushes it down on mobile */
+    max-width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: none;
+    border-radius: 0.625rem;
+}
+
+/* Discoveries vertical stack */
+.discoveries {
+    padding: 1rem;
+}  
+
+.discoveries-grid {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 1.5rem;
+}
+
+.discovery-item {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.card-image {
+    order: -1;
+    max-width: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
+    border-radius: 0.625rem;
+}
+
+.card-text {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #271555;
+    }
+
+    .footer {
+        width: 95%;
+    }
+}
+
+
+/* Media query for desktop */
+@media (min-width: 48rem) {
+#typewriter {
+    font-size: 6.25rem;
+}
+
+    .repeated-text h2 {
+        font-size: 6.15rem;
+        opacity: 0.2;
+        justify-content: right;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+        text-align: right;
+        display: inline-block;
+    }
+
+    .hero-image {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        z-index: 1;
+        max-width: 30rem;
+        padding-left: 5rem;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+
+    .intro {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .mission {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .vision {
+        max-width: 800px;
+        text-align: center;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
+    .discoveries-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .discoveries {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 2rem;
+        padding: 2rem;
+        width: 100%;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+
+    .discoveries-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 75rem;
+        align-items: center;
+    }
+    
+    .discovery-item {
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0.5rem;
+        border: 0.125rem solid #684D9A;
+        background-color: #D9CEE7;
+        width: 100%;
+        height: auto;
+    }
+
+    .card-image {
+        order: -1;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: auto;
+        max-width: 30rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        font-size: 1.3rem;
+        font-family: "founders-grotesk.otf";
+        color: #271555;
+        padding: 0.5rem;
+    }
+
+    .card-text h3 {
+        font-family: "unison-pro-bold.otf";
+        font-size: 1.3rem;
+        color: #271555;
+        text-align: center;
+    }
+
+    .card-text a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+}
+
